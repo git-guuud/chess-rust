@@ -1,0 +1,67 @@
+#board {
+    display: grid;
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-columns: repeat(8, 1fr);
+    width:600px;
+    height:600px;
+    margin: 30px;
+    background-color: beige;
+    border-style: solid;
+    border-width: 5px;
+    /* border-radius: 10px; */
+    border-color: #8C9AA6;
+}
+
+#body {
+    display: flex;
+    flex-direction: row;
+    background-color: #222222;
+}
+
+.black {
+    background-color: #424C55;
+}
+
+.white {
+    background-color: #D1CCDC;
+}
+
+.black:hover {
+    background-color: #5A6B7A;
+}
+
+.white:hover {
+    background-color: #9D92B5;
+}
+
+.valid-move {
+    background-color: #FFB6C1;
+}
+
+#fenInput, #outputfen {
+    width: 600px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    vertical-align: middle;
+    resize: none;
+    text-wrap: nowrap;
+    background-color: #38A3A5;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 5px;
+    border-color: #416788;
+}
+
+#promPiece {
+    width: 600px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    vertical-align: middle;
+    background-color: #81D2C7;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 5px;
+    border-color: #416788;
+}

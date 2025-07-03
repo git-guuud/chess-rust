@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Chess Bot</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet"
+      href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css"
+      integrity="sha384-q94+BZtLrkL1/ohfjR8c6L+A6qzNH9R2hBLwyoAfu3i/WCvQjzL2RQJ3uNHDISdU"
+      crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+        crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"
+        integrity="sha384-8Vi8VHwn3vjQ9eUHUxex3JSN/NFqUg3QbPyX8kWyb93+8AC/pPWTzj+nHtbC5bxD"
+        crossorigin="anonymous"></script> -->
+
+</head>
+<body id="body">
+    <!-- <div id="myBoard" style="width: 400px"></div> -->
+    
+    <script type="module" src="index.js"></script>
+    
+    <div id="board"></div>
+    <div style="display: flex; flex-direction: column;">
+        <select id="promPiece">
+            <option value="Queen">Queen</option>
+            <option value="Rook">Rook</option>
+            <option value="Bishop">Bishop</option>
+            <option value="Knight">Knight</option>
+        </select>
+        <input type="text" id="fenInput" placeholder="Enter FEN string here..."></textarea>
+        <div style="display: flex; flex-direction: row;">
+            <button id="fenSubmit">Set Board</button>
+            <button id="reset">Reset Board</button>
+            <button id="getfen">Get FEN</button>
+            <!-- <button id="engineMove">Engine Move</button> -->
+        </div>
+        <input readonly type="text" id="outputfen"></textarea>
+    </div>
+</body>
+</html>
