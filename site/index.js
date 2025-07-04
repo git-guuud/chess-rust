@@ -148,13 +148,13 @@ let game_over = false;
 
 setBoard(start);
 
-// // Engine vs Player
-// const engine = setInterval(() => {
-//     if (state.turn === "White") return; 
-//     let x = engine_move();
-//     console.log(`Engine move: ${x}`);
-//     displayBoard();
-// }, 1000);
+// Engine vs Player
+const engine = setInterval(() => {
+    if (state.turn === "White") return; 
+    let x = engine_move();
+    console.log(`Engine move: ${x}`);
+    displayBoard();
+}, 1000);
 
 // Engine vs Engine
 // engine = setInterval(() => {
@@ -188,11 +188,11 @@ document.getElementById('promPiece').onchange = function() {
     change_promotion(this.value);
 }
 
-// document.getElementById('engineMove').onclick = () => {
-//     // await initSync();
-//     let x = engine_move();
-//     console.log(`Engine move: ${x}`);
-//     displayBoard();
-// }
+document.getElementById('engineMove').onclick = () => {
+    // await initSync();
+    let x = engine_move();
+    console.log(`Engine move: ${x}`);
+    displayBoard();
+}
 
 

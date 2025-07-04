@@ -12,6 +12,7 @@ Right now, the engine is a simple minimax implementation with alpha-beta pruning
 - [x] Move generation
 - [x] Basic evaluation function
 - [x] NegaMax with alpha-beta pruning
+- [x] Zobrist hashing for position representation
 
 # To be added (in order of priority)
 - [ ] Transposition tables

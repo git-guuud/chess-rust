@@ -497,7 +497,7 @@ pub fn get_valid_moves_for(from: usize, state: &State) -> Vec<usize> {
 
 pub fn get_all_valid_moves_raw(state: &State) -> Vec<(usize, usize)> {
     let mut res = Vec::new();
-    for i in 0..63 {
+    for i in 0..64 {
         if let Some(p) = state.board[i] {
             if p.color != state.turn {continue;}
         }
@@ -510,7 +510,7 @@ pub fn get_all_valid_moves_raw(state: &State) -> Vec<(usize, usize)> {
 
 pub fn get_all_valid_moves(state: &State) -> Vec<(usize, usize)> {
     let mut res = Vec::new();
-    for i in 0..63 {
+    for i in 0..64 {
         if let Some(p) = state.board[i] {
             if p.color != state.turn {continue;}
         }
