@@ -59,6 +59,8 @@ impl State {
     }
 
     pub fn set_piece(&mut self, ind: usize, piece: Piece) {
+        self.remove_piece(ind);
+
         let mut x = if piece.color == PieceColor::Black {0} else {6};
         x += piece.tp as usize;
         self.zob_hash ^= ZOBRIST_KEYS.pieces[ind][x];
@@ -151,10 +153,9 @@ pub fn state_from_fen(fen: String, state:&mut State) -> Result<(),()> {
         return Err(());
     }
 
-    state.turn = PieceColor::White;
     match parts[1] {
-        "w" => {},
-        "b" => state.switch_turn(),
+        "w" => if state.turn==PieceColor::Black {state.switch_turn();},
+        "b" => if state.turn==PieceColor::White {state.switch_turn();},
         _ => return Err(()),
     };
 
