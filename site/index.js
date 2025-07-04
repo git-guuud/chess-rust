@@ -49,7 +49,7 @@ async function displayBoard() {
             alert(`Stalemate! The game is a draw.`);
         }
     }
-    console.log(`eval: ${_eval()}`);
+    console.log(`zobrist_hash: ${state.zob_hash}`);
 }
 
 function pieceClicked() {
@@ -149,12 +149,12 @@ let game_over = false;
 setBoard(start);
 
 // // Engine vs Player
-const engine = setInterval(() => {
-    if (state.turn === "White") return; 
-    let x = engine_move();
-    console.log(`Engine move: ${x}`);
-    displayBoard();
-}, 1000);
+// const engine = setInterval(() => {
+//     if (state.turn === "White") return; 
+//     let x = engine_move();
+//     console.log(`Engine move: ${x}`);
+//     displayBoard();
+// }, 1000);
 
 // Engine vs Engine
 // engine = setInterval(() => {

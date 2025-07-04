@@ -3,6 +3,7 @@ use chess::*;
 
 mod score;
 mod search;
+mod zobrist;
 
 use wasm_bindgen::prelude::*;
 use std::sync::{Mutex, OnceLock};
@@ -73,23 +74,7 @@ pub fn get_state_fen() -> String {
     fen.push(if state.turn == PieceColor::White { 'w' } else { 'b' });
 
     fen.push(' ');
-    let castling: Vec<char> = state.castling.iter().enumerate()
-        .filter_map(|(i, &can_castle)| if can_castle {
-            match i {
-                0 => Some('K'), // White kingside
-                1 => Some('Q'), // White queenside
-                2 => Some('k'), // Black kingside
-                3 => Some('q'), // Black queenside
-                _ => None,
-            }
-        } else {
-            None
-        }).collect();
-    if castling.is_empty() {
-        fen.push('-');
-    } else {
-        fen.extend(castling);
-    }
+    fen.push_str(["-", "K", "Q", "KQ", "k", "Kk", "Qk", "KQk", "q", "Kq", "Qq", "KQq", "kq", "Kkq", "Qkq", "KQkq"][state.castling as usize]);
     fen.push(' ');
     if state.en_passant == (8, 8) {
         fen.push('-');
