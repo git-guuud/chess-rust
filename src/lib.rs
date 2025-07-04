@@ -148,3 +148,10 @@ pub fn engine_move() -> i32 {
     make_move_on(res.0.0, res.0.1, &mut state);
     res.1
 }
+
+#[wasm_bindgen]
+pub fn get_zob_hash() -> String{
+    let state = STATE.get_or_init(|| Mutex::new(State::new()));
+    let state = state.lock().unwrap();
+    state.zob_hash.to_string()
+}

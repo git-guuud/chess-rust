@@ -4,7 +4,7 @@
 //   position: 'start'
 // }
 // var board = Chessboard('myBoard', config)
-import initSync, {set_state, get_state, get_state_fen, make_move, get_valid_moves, in_check, change_promotion, _eval, engine_move} from './node_modules/chess/chess.js';
+import initSync, {set_state, get_state, get_state_fen, make_move, get_valid_moves, in_check, change_promotion, _eval, engine_move, get_zob_hash} from './node_modules/chess/chess.js';
 
 async function setBoard(fen) {
     await initSync();
@@ -49,7 +49,7 @@ async function displayBoard() {
             alert(`Stalemate! The game is a draw.`);
         }
     }
-    console.log(`zobrist_hash: ${state.zob_hash}`);
+    document.getElementById('zob-hash').innerText = `Zobrist Hash: ${get_zob_hash()}`;
 }
 
 function pieceClicked() {

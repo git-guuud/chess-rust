@@ -40,6 +40,7 @@ pub struct State {
     pub halfmove_clock: u32,
     pub fullmove_number: u32,
     pub promotion: PieceType,
+    #[serde(skip)]
     pub zob_hash: u64,
 }
 
